@@ -1,4 +1,4 @@
-package ejer3;
+package Ejer5;
 
 import java.io.*;
 import java.net.Socket;
@@ -9,7 +9,9 @@ public class Cliente {
 
         // Enviar un número al servidor
         BufferedWriter escritor = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-        escritor.write(args[0]+"\n");  // Número que se envía al servidor
+        escritor.write(args[0]+"\n");
+        escritor.write(args[1]+"\n");
+        // Número que se envía al servidor
         escritor.flush();
 
         // Leer la respuesta del servidor
@@ -19,7 +21,7 @@ public class Cliente {
 
         // Cerrar las conexiones
         lector.close();
-        escritor.close();
+//        escritor.close();
         socket.close();
     }
 }
